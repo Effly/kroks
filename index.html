@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Notes</title>
+</head>
+<body>
+    <div id="app">
+        <div class="head">
+
+            <h1 >{{ "My notes"}}</h1>
+            
+            
+        </div>
+        
+        <div class="title">
+            <notes @del_note="delete_note(n)" :data="data" v-for="(data, n) in notes" :key="n"></notes>
+            <div class="add__note">
+                <input type="text" v-model="new_notes.title" placeholder="New title note..">
+                <br>
+                <textarea placeholder="Description.." v-model="new_notes.desc"></textarea>
+            </div>
+            <adds @adds_note="add_note" ></adds>
+        </div>
+
+
+
+
+    </div>
+
+
+    <template id="notes-template">
+        <div  class="note">
+            <div class="note__container">
+                <h3 class="note__title">{{ data.title }}</h3>
+                <p class="note__desc">{{ data.desc }}</p>
+            </div>
+            <button @click="del_note" class="delete__note">
+                <img src="close.png" alt="close">
+            </button>
+           
+        </div>
+    </template>
+
+    
+
+    <template id="add-template">
+        <div>
+            
+            <button @click="adds_note" >Add note</button>
+
+        </div>
+    </template>
+
+    
+    
+
+
+
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

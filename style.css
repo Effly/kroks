@@ -1,0 +1,59 @@
+:root {
+    --main: #2F4858;
+    --white: #fff;
+}
+* {
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s;
+}
+#app{
+    width: 320px;
+    box-shadow: 0 3px 20px #00000023;
+    font-family: 'Gilroy', sans-serif;
+    padding: 10px;
+    margin: 20px 0 0 20px;
+    color: var(--main);
+}
+.head{
+    padding:15px 0;
+    margin-bottom: 15px;
+    background-color: var(--main);
+    color:var(--white);
+}
+.note{
+    display: grid;
+    grid-template-columns:1fr 0.1fr;
+    margin-bottom: 15px;
+    position: relative;
+
+}
+.note::after{
+    margin-top: 5px;
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 88%;
+    height: 2px;
+    background-color: var(--main);
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+input[type=text] {
+    width: 281px;
+   
+}
+textarea{
+    width: 283px;
+    height: 75px;
+}
+  
+  
+/* input[type=text]:focus {
+    width: 100%;
+    }    */
+
